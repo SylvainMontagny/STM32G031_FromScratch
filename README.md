@@ -1,5 +1,6 @@
 # 1. What is this project?
 This project is a simple demonstration to show how to write an application using only registers with CMSIS drivers.
+The STM32G031_PB1_HelloWorld.bin file is a simple Led blinking project on PB1.
 
 # 2. What is the MCU?
 This project has been written for the STM32G031K8 MCU with the default High Speed Internal (HSI) clock of 16Mhz. The main() function works on a the **USMB Home board** with the following peripherals. 
