@@ -21,11 +21,13 @@ This board has a standalone ST-Link. There is no need of any programmer hardware
 This board has been build at University Savoie Mont Blanc by Xavier Poncet and Kenny Begue-Besson.
 ![image USMB Board](/Images/usmb_board_top.jpg)
  
-There is no ST-Link (programmer/debugger) on this board, so you need to add one. The easiest way to do so is to use a Nucleo64 board, then :
-Remove ST-Link Jumper CN2 :
+There is no ST-Link (programmer/debugger) on this board, so you need to add one. The easiest way to do so is to use a Nucleo64 board, then remove ST-Link Jumper CN2.
 ![image USMB Board jumpers](/Images/st-link-jumpers-no-bg.png)
-Locate the CN4 ST-Link connector and plug your dev board as shown below :
+
+
+Locate the CN4 ST-Link connector and plug your development board as shown below.
 ![image USMB Board jumpers](/Images/usmb_board_no_bg.png)
+
 
 
 
