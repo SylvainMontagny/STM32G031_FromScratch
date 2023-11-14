@@ -13,14 +13,23 @@ This project has been written for the STM32G031K8 MCU. It uses the following per
 * Clock HSI 16 MHz
 
 ## 2.2 Boards
-To use this project, you can use the **USMB Home** board. 
-![image USMB Board](/Images/usmb_board_top.jpg)
- 
-Or the **Nucleo 32** board
+### 2.2.1 Nucleo-G031K8 board
+This board has a standalone ST-Link. There is no need of any programmer hardware to use it.
 ![image Nucleo Board](/Images/NUCLEO-G031K8_top.png)
 
+### 2.2.2 USMB board
+This board has been build at University Savoie Mont Blanc by Xavier Poncet and Kenny Begue-Besson.
+![image USMB Board](/Images/usmb_board_top.jpg)
+ 
+There is no ST-Link (programmer/debugger) on this board, so you need to add one. The easiest way to do so is to use a Nucleo64 board, then :
+Remove ST-Link Jumper CN2 :
+![image USMB Board jumpers](/Images/st-link-jumpers-no-bg.png)
+Locate the CN4 ST-Link connector and plug your dev board as shown below :
+![image USMB Board jumpers](/Images/usmb_board_no_bg.png)
 
-# 3. Project compilation
+
+
+# 3. Project development with STM32CubeIDE
 ## 3.1 Project creation
 1. On STM32CubeIDE, create a new empty project: **File > New > STM32 project > MCU Selector > STM32G031K8T6 > Empty project**.
 2. Delete the **Inc/** and **Src/** folder. You don't need them.
