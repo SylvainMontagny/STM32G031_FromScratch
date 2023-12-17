@@ -17,7 +17,7 @@ int main(void)
 		/* Led blinking on USMB Board */
 		GPIOB->ODR 	 ^= 1 << GPIO_ODR_OD1_Pos;
 
-		/* Led blinking on NUCLEO-G031K8 */
+		/* Led blinking on NUCLEO-G031K8 examen*/
 		GPIOC->ODR 	 ^= 1 << GPIO_ODR_OD6_Pos;
 	}
 }

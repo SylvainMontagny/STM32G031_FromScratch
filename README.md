@@ -49,7 +49,7 @@ There are 2 ways to program the MCU :
 2. Using the Internal bootloader
 
 ### 3.3.1 Programmation with ST-Link
-If you use the NUCLEO-G031K8, you just need to plug the board to your computer. Then, on STM32CubeIDE, hit the **Run > Run** command to flash your MCU.
+If you use the NUCLEO-G031K8, you just need to plug the board to your computer. 
 
 If you use the USMB board, there is no ST-Link (programmer/debugger) onboard, so you need to add one. The easiest way to do so is to use another Nucleo64 board, then remove the ST-Link Jumper CN2. Removing the jumpers disconnects the ST-Link and the Nucleo64 MCU.
 ![image USMB Board jumpers](/Images/st-link-jumpers-no-bg.png)
@@ -58,6 +58,10 @@ You can now connect your own board (USMB Board). Locate the CN4 ST-Link connecto
 ![image USMB Board jumpers](/Images/usmb_board_no_bg.png)
 
 You need to power up both the Nucleo64 board (USB mini) **AND** the USMB board (USB micro). 
+
+Then whatever the board you are using, you can either :
+1. Hit the **Run > Run** command on STM32CubeIDE
+2. Drag and drop the executable file directly on the drive open in your file system
 
 ### 3.3.2 Programmation with the bootloader
 When using the onboard bootloader, we don't need the ST-Link. For that, we just need to set the BOOT0 (PA8) pin to 1.
