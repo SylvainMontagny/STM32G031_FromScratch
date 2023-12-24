@@ -18,6 +18,8 @@ You can use this project with the following devlopment board.
 ### 2.2.1 Nucleo-G031K8 board
 This board has a standalone ST-Link. There is no need of any programmer hardware to use it.
 ![image Nucleo Board](/Images/NUCLEO-G031K8_top.png)
+The following figure is the top view of the board with Push Button on the right side.
+![image Nucleo Board](/Images/NUCLEOG031-top-view-schema.png)
 
 ### 2.2.2 USMB board
 This board has been build at University Savoie Mont Blanc by Xavier Poncet and Kenny Begue-Besson.
