@@ -17,8 +17,9 @@ You can use this project with the following devlopment board.
 
 ### 2.2.1 Nucleo-G031K8 board
 This board has a standalone ST-Link. There is no need of any programmer hardware to use it.
+The following figure is the **bottom  view** of the board with **the USB connector on the right side**.
 ![image Nucleo Board](/Images/NUCLEO-G031K8_top.png)
-The following figure is the top view of the board with Push Button on the right side.
+The following figure is the **top view** of the board with **the Push Button on the right side**.
 ![image Nucleo Board](/Images/NUCLEOG031-top-view-schema.png)
 
 ### 2.2.2 USMB board
