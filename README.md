@@ -8,7 +8,7 @@ This project is a template to show how to write a basic application using only r
 ## 2.1. MCU
 This template project has been written for the STM32G031K8 MCU. It uses the following peripherals :
 
-* PB1 : LED
+* PC6 : LED
 * Sytick Timer
 * Clock HSI 16 MHz
 
@@ -35,13 +35,13 @@ This board has been build at University Savoie Mont Blanc by Xavier Poncet and K
 1. On STM32CubeIDE, create a new empty project: **File > New > STM32 project > MCU Selector > STM32G031K8T6 > Empty project**.
 2. Delete the **Inc/** and **Src/** folder. You don't need them.
 3. Clone this GitHub repository on your Hard Disk.
-4. Copy-past **Src/**, **Inc/** and **Drivers/** in your project.
+4. Copy-paste **Src/**, **Inc/** and **Drivers/** in your project.
 
 ## 3.2 Project compilation
-1. Add the following folder to your include Path (**right click on the folder > "Add to include Path"**), otherwise, the compiler won't find the header files.
-	* Drivers/CMSIS/ST/STM32F4xx/Include
-	* Drivers/CMSIS/Include
-	* Inc
+1. Add the three following folders to your include Path (**right click on the folder > "Add to include Path"**), otherwise, the compiler won't find the header files.
+	* /Drivers/CMSIS/ST/STM32F4xx/Include
+	* /Drivers/CMSIS/Include
+	* /Inc
 2. The folder **Src/** and **Drivers/** are sometimes "exclude from build". We need to include them to the compilation process. So, Right clic on the folder **Src/** > Properties > C/C++ build > Uncheck the box "Exclude from buid".
 
 Your project is ready. You can now compile your project : **Project > Compile**. 
@@ -54,27 +54,26 @@ There are 2 ways to program the MCU :
 ### 3.3.1 Programmation with ST-Link
 If you use the NUCLEO-G031K8, you just need to plug the board to your computer. 
 
-If you use the USMB board, there is no ST-Link (programmer/debugger) onboard, so you need to add one. The easiest way to do so is to use another Nucleo64 board, then remove the ST-Link Jumper CN2. Removing the jumpers disconnects the ST-Link and the Nucleo64 MCU.
+If you use the USMB board, there is no ST-Link (programmer/debugger) onboard, so you need to add one. The easiest way to do so is to use another Nucleo64 board, then remove the ST-Link Jumper CN2 in oder to disconnect the Nucleo64 MCU, and use yours instead.
 ![image USMB Board jumpers](/Images/st-link-jumpers-no-bg.png)
 
-You can now connect your own board (USMB Board). Locate the CN4 ST-Link connector and plug your development board as shown below, and switch BOOT0 to 0. 
+You can now connect your own board (USMB Board). Locate the CN4 ST-Link connector and plug your development board as shown below. Check that the BOOT0 switch is on 0. 
 ![image USMB Board jumpers](/Images/usmb_board_no_bg.png)
 
 You need to power up both the Nucleo64 board (USB mini) **AND** the USMB board (USB micro). 
 
 Then whatever the board you are using, you can either :
-1. Hit the **Run > Run** command on STM32CubeIDE
-2. Drag and drop the executable file directly on the drive open in your file system
+1. Hit the **Run > Run** command on STM32CubeIDE.
+2. Drag and drop the executable file directly on the drive open in your file system.
 
 ### 3.3.2 Programmation with the bootloader
-When using the onboard bootloader, we don't need the ST-Link. For that, we just need to set the BOOT0 (PA8) pin to 1.
+With the USMB board, the first time we want to use the bootloader programming mode, we need to configure it. The configuration requires the MCU to be connected in ST-Link with STM32Programmer software. 
+1. Connect your USMB board with STM32Programmer with ST-Link.
+2. In the Option Bytes section, set nBOOT_Sel to 0 (uncheck the tick box). And apply the changes.
 
-If you use the NUCLEO-G031K8, the BOOT0 pin is not exposed, so there is no convenient way to have access to the bootloader.
-
-If you use the USMB Board :
-1. Switch the BOOT0 to 1
-2. Install STM32CubeProgrammer
-3. Select your Connection : UART, 115200 and the COM port
-4. In the Erasing & Programming section, select any executable file : **.bin**, **.hex** or **.elf** and press "Start Programming".
+We can now use the bootloader modes. When using the onboard bootloader, we just need to set the BOOT0 swithc (PA8) pin to 1.
+1. Switch the switch BOOT0 to 1
+2. In STM32CubeProgrammer, select your Connection : UART, 115200 and COM port.
+3. In the Erasing & Programming section, select any executable file : **.bin**, **.hex** or **.elf** and press "Start Programming".
 
 Your application should start.
