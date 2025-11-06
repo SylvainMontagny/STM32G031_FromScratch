@@ -1,0 +1,3 @@
+- Silk screen on LED (LEDG) in not D3/PB1 but PC6.
+- D2 is useless as the MCU is 5V tolerant.
+- PB and RESET has default on my board (needs to be checked).
