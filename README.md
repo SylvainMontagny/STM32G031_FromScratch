@@ -67,13 +67,14 @@ Then whatever the board you are using, you can either :
 2. Drag and drop the executable file directly on the drive open in your file system.
 
 ### 3.3.2 Programmation with the bootloader
-With the USMB board, the first time we want to use the bootloader programming mode, we need to configure it. The configuration requires the MCU to be connected in ST-Link with STM32Programmer software. 
+With the USMB board, the first time we want to use the bootloader programming mode, we need to enable it. The configuration requires the MCU to be connected in ST-Link with STM32Programmer software. 
 1. Connect your USMB board with STM32Programmer with ST-Link.
-2. In the Option Bytes section, set nBOOT_Sel to 0 (uncheck the tick box). And apply the changes.
+2. In the Option Bytes section > User Configuration, set nBOOT_Sel to 0 (uncheck the tick box). And apply the changes.
 
-We can now use the bootloader modes. When using the onboard bootloader, we just need to set the BOOT0 swithc (PA8) pin to 1.
-1. Switch the switch BOOT0 to 1
-2. In STM32CubeProgrammer, select your Connection : UART, 115200 and COM port.
-3. In the Erasing & Programming section, select any executable file : **.bin**, **.hex** or **.elf** and press "Start Programming".
+We can now use the bootloader modes:
+1. Remove your board from the ST-Link connection
+2. Switch BOOT0 to 1
+3. In STM32CubeProgrammer, select your Connection : UART, 115200 and COM port.
+4. In the Erasing & Programming section, select any executable file : **.bin**, **.hex** or **.elf** and press "Start Programming".
 
 Your application should start.
